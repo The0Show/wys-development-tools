@@ -1,0 +1,38 @@
+<body>
+    <div id="docs"></div>
+    <hr />
+    <h4>
+        Documention provided by
+        <a href="https://github.com/thennothinghappened/WYS-Documentation"
+            >thennothinghappened/WYS-Documentation</a
+        >
+        under the
+        <a
+            href="https://github.com/thennothinghappened/WYS-Documentation/blob/main/LICENSE"
+            >MIT License</a
+        >
+    </h4>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.0.3/showdown.min.js"
+        integrity="sha512-vx8rJNrYIZPDr290AV2tL04x0CKjLHSnTXrHMeb1kqbhfGwBnclPDOWIWxRiVS6Oe1oGzk5MzNz/eLzVku30kg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+        var converter = new showdown.Converter({
+            tables: true,
+            smoothLivePreview: true,
+            ghMentions: true,
+            tasklists: true,
+        });
+
+        converter.setFlavor("github");
+
+        var text = "MARKDOWN GOES HERE",
+            html = converter.makeHtml(text);
+
+        document.getElementById("docs").innerHTML = html;
+    </script>
+</body>
